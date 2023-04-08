@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Esercizio 3</title>
+
+    <script>
+
+        function Invia() {
+
+            var Cognome = document.Form.cognome.value;
+            var Nome = document.Form.nome.value;
+            var CAP = document.Form.cap.value;
+            var CodFiscale = document.Form.codice_fiscale.value;
+            var ID = document.Form.id.value;
+            var Pass1 = document.Form.password1.value;
+            var Pass2 = document.Form.password2.value;
+            var Email = document.Form.email.value;
+
+            Flag = true;
+
+            if (Cognome == "") {
+                alert ("Inserisci il cognome");
+                Flag = false;
+            }
+
+            if (Nome == "") {
+                alert ("Inserisci il nome");
+                Flag = false;
+            }
+
+            if (CAP !== "") {
+                if (CAP.lenght !== 5) {
+                    alert("Il CAP deve essere formato da 5 caratteri numerici");
+                    Flag = false;
+                }
+            }
+
+            if (CodFiscale !== "") {
+                if (CodFiscale.lenght !== 16) {
+                    alert("Il codice fiscale deve essere formato da 16 caratteri alfanumerici");
+                    Flag = false;
+                }
+            }
+
+            if (ID == "") {
+                alert("Inserisci il Codice ID");
+                Flag = false;
+            } else if (ID.lenght !== 8) {
+                alert("L'ID deve essere formato da 8 caratteri");
+                Flag = false;
+            }
+
+            if (Pass1 === "") {
+                alert ("Inserisci la password");
+                Flag = false;
+                if (Pass2 === "") {
+                    alert ("Inserisci la conferma della password");
+                    Flag = false;
+                }
+                if (Pass1.length > 10) {
+                    alert ("La password deve essere MAX 10 caratteri");
+                    Flag = false;
+                }
+            } else {
+                if (Pass1.length > 10) {
+                    alert ("La password deve essere MAX 10 caratteri");
+                    Flag = false;
+                }
+                if (Pass1 !== pass2) {
+                    alert ("Le password sono differenti");
+                    Flag = false;
+                }
+            }
+
+            if (Email !== "") {
+                if (email.indexOf("@") == -1) {
+                    alert("Inserisci l'email giusta");
+                    Flag = false;
+                }
+            }
+
+            if (Flag == true) {
+                alert("Modulo inviato con successo.");
+            } 
+
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <form name="Form">
+
+        <div class="dati">
+
+            <div class="dati_anagrafici">
+
+                <fieldset>
+                    <legend>
+                        <strong>Dati anagrafici</strong>
+                    </legend>
+
+                    <table>
+                        <tr>
+                            <td>Cognome *:</td>
+                            <td>
+                                <input type="text" name="cognome" size="20px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nome *:</td>
+                            <td>
+                                <input type="text" name="nome" size="20px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Indirizzo:</td>
+                            <td>
+                                <input type="text" name="indirizzo" size="30px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Comune residenza:</td>
+                            <td>
+                                <input type="text" name="residenza" size="30px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CAP:</td>
+                            <td>
+                                <input type="text" name="cap" size="5px" maxlength="5">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Provincia:</td>
+                            <td>
+                                <select>
+                                    <option value="" disabled selected>Seleziona la provincia</option>
+                                    <option value="ba">BA</option>
+                                    <option value="bat">BAT</option>
+                                    <option value="br">BR</option>
+                                    <option value="fg">FG</option>
+                                    <option value="le">LE</option>
+                                    <option value="ta">TA</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Data di nascita <br>
+                                <small>(gg/mm/aaaa)</small> :
+                            </td>
+                            <td>
+                                <input type="datetime" name="data" size="10px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Comune di nascita:</td>
+                            <td>
+                                <input type="text" name="nascita" size="30px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sesso:</td>
+                            <td>
+                                <input type="radio" name="sesso">Maschio
+                                <input type="radio" name="sesso">Femmina
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Telefono:</td>
+                            <td>
+                                <input type="text" name="telefono" size="15px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Codice fiscale:</td>
+                            <td>
+                                <input type="text" name="codice_fiscale" size="20px" maxlength="16">
+                            </td>
+                        </tr>
+                    </table>
+
+                </fieldset>
+
+            </div>
+
+            <div class="dati_registrazione">
+
+                <fieldset>
+                    <legend>
+                        <strong>Dati per la registrazione</strong>
+                    </legend>
+
+                    <table>
+                        <tr>
+                            <td>
+                                Codice ID <small>(8 caratteri)</small> *:
+                            </td>
+                            <td>
+                                <input type="text" name="id" size="10px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>E-mail:</td>
+                            <td>
+                                <input type="text" name="email" size="20px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Password <small>(max 10 caratteri)</small> *:
+                            </td>
+                            <td>
+                                <input type="password" name="password1" size="15px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Conferma Password *:</td>
+                            <td>
+                                <input type="password" name="password2" size="15px">
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="avviso">
+                        I campi con * sono obbligatori
+                    </div>
+
+                </fieldset>
+
+            </div>
+
+        </div>
+
+        <div class="conferma_e_invio">
+            <fieldset>
+                <legend>
+                    <strong>Conferma e invio dei dati</strong>
+                </legend>
+
+                <div class="container">
+                    <div class="bottoni">
+                        <input type="button" class="btn1" value="Invia modulo" onclick="Invia()">
+                        <input type="reset" class="btn2" name="Annulla" value="Annulla">
+                        <button class="btn3">Indietro</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+    </form>
+    
+</body>
+</html>

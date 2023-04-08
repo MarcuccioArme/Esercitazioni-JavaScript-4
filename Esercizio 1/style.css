@@ -1,0 +1,38 @@
+*{
+    margin: 1;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: antiquewhite;
+}
+
+table, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+table {
+    font-size: 20px;
+}
+td {
+    margin: 0px;
+    height: 35px;
+    width: 210px;
+    background-color: burlywood;
+}
+
+input[type="text"] {
+    height: 100%;
+    font-size: 15px;
+}
+textarea {
+    font-size: 15px;
+}
+
+.bottoni input{
+    font-size: 20px;
+    float: right;
+    margin-left: 5px;
+    cursor: pointer;
+}

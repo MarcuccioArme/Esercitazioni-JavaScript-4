@@ -1,0 +1,165 @@
+*{
+    margin: 1;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+legend {
+    color: darkred;
+}
+
+/* Div principali */
+.articoli_da_ordinare, .dati_cliente {
+    width: 1050px;
+    margin: 0 auto;
+}
+.conferma_e_invio {
+    width: 500px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.cont2 {
+    border: 2px black solid;
+}
+
+.cont2 input[type="text"] {
+    color: black;
+    border: 2px black solid;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.cont2 input[type="number"] {
+    color: black;
+    border: 2px black solid;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+/* Titoli div */
+.info {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 2px blue solid;
+    background-color: yellow;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Descrizione articolo */
+.descrizione_articolo {
+    width: 300px;
+    padding-right: 20px;
+}
+.articolo {
+    background-color: orange;
+}
+
+/* Prezzo unitario e totale */
+.prezzo_unitario{
+    width: 220px;
+    padding-right: 20px;
+}
+.prezzo_totale {
+    width: 220px;
+    margin-left: auto;
+}
+
+.prezzo {
+    text-align: right;
+    width: 120px;
+    background-color: rgb(255, 255, 153);
+}
+
+/* Quantità */
+.quantità {
+    width: 150px;
+}
+.quant {
+    width: 80px;
+    background-color: rgb(127, 255, 165);
+}
+
+/* Totale complessivo */
+.totale_complessivo {
+    display: flex;
+    justify-content: space-between;
+}
+.testo {
+    background-color: yellow;
+    color: red;
+    width: 670px;
+    padding: 5px;
+    margin-top: 10px;
+    border: 2px black solid;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.risultato {
+    background-color: red;
+    color: black;
+    width: 220px;
+    height: auto;
+    margin-top: 10px;
+    border: 2px black solid;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Dati cliente */
+.dati {
+    width: 75%;
+}
+
+.cognome, .nome, .email, .indirizzo {
+    color: blue;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Bottoni */
+.bottoni {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btn1 {
+    background-color: rgb(127, 255, 165);
+    color: blue;
+    width: 100px;
+    height: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn2 {
+    background-color: red;
+    color: yellow;
+    width: 100px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn3 {
+    background-color: yellow;
+    color: red;
+    width: 100px;
+    cursor: pointer;
+    font-weight: bold;
+}

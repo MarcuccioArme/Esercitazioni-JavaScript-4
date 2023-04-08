@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Esercizio 2</title>
+
+    <script>
+
+        prezzo = new Array(5); 
+        prezzo[0] = 25.00; 
+        prezzo[1] = 80.00; 
+        prezzo[2] = 40.00; 
+        prezzo[3] = 20.30; 
+        prezzo[4] = 71.00;
+
+        function Calcola()
+        {
+            with (document.Form)
+            {   
+                prezzo_tot1.value = prezzo[0] * parseInt(quant1.value); 
+                prezzo_tot2.value = prezzo[1] * parseInt(quant2.value); 
+                prezzo_tot3.value = prezzo[2] * parseInt(quant3.value); 
+                prezzo_tot4.value = prezzo[3] * parseInt(quant4.value); 
+                prezzo_tot5.value = prezzo[3] * parseInt(quant5.value);
+
+                totale.value = parseFloat(prezzo_tot1.value) + 
+                            parseFloat(prezzo_tot2.value) + 
+                            parseFloat(prezzo_tot3.value) + 
+                            parseFloat(prezzo_tot4.value) + 
+                            parseFloat(prezzo_tot5.value); 
+            }
+        }
+
+        function Invia() {
+
+            var Cognome = document.Form.cognome.value;
+            var Nome = document.Form.nome.value;
+            var Email = document.Form.email.value;
+            var Indirizzo = document.Form.indirizzo.value;
+
+            Flag = true;
+
+            //Controllo cognome
+            if (Cognome == "") {
+                Flag = false;
+            }
+
+            //Controllo nome
+            if (Nome == "") {
+                Flag = false;
+            }
+
+            //Controllo email
+            if (Email == "" || Email.indexOf("@") == -1) {
+                Flag = false;
+            }
+
+            //Controllo indirizzo
+            if (Indirizzo == "") {
+                Flag = false;
+            }
+
+            //Controllo finale
+            if (Flag == false) {
+                alert("Il modulo non può essere inviato: verifica di aver inserito tutti i dati correttamente.");
+            } 
+            else {
+                alert("Modulo inviato con successo.");
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <form name="Form">
+
+        <!-- Articoli da ordinare -->
+        <div class="articoli_da_ordinare">
+             
+            <fieldset>
+                <legend>
+                    <strong>Articoli da ordinare</strong>
+                </legend>
+
+                <div class="container">
+                    <div class="descrizione_articolo">
+                        <div class="info">
+                            Descrizione articolo
+                        </div>
+                        <div class="cont2"> 
+                            <br>
+                            <input type="text" name="art1" class="articolo" value="Articolo 1" disabled>
+                            <br><br>
+                            <input type="text" name="art2" class="articolo" value="Articolo 2" disabled>
+                            <br><br>
+                            <input type="text" name="art3" class="articolo" value="Articolo 3" disabled>
+                            <br><br>
+                            <input type="text" name="art4" class="articolo" value="Articolo 4" disabled>
+                            <br><br>
+                            <input type="text" name="art5" class="articolo" value="Articolo 5" disabled>
+                            <br><br>
+                        </div>
+                    </div>
+    
+                    <div class="prezzo_unitario">
+                        <div class="info">
+                            Prezzo unitario
+                        </div>
+                        <div class="cont2"> 
+                            <br>
+                            <input type="text" name="prezzo1" class="prezzo" value="25.00€" disabled>
+                            <br><br>
+                            <input type="text" name="prezzo2" class="prezzo" value="80.00€" disabled>
+                            <br><br>
+                            <input type="text" name="prezzo3" class="prezzo" value="40.00€" disabled>
+                            <br><br>
+                            <input type="text" name="prezzo4" class="prezzo" value="20.30€" disabled>
+                            <br><br>
+                            <input type="text" name="prezzo5" class="prezzo" value="71.00€" disabled>
+                            <br><br>
+                        </div>
+                    </div>
+    
+                    <div class="quantità">
+                        <div class="info">
+                            Quantità
+                        </div>
+                        <div class="cont2"> 
+                            <br>
+                            <input type="number" name="quant1" class="quant" max="100" min="0" value="0" onChange="Calcola()">
+                            <br><br>
+                            <input type="number" name="quant2" class="quant" max="100" min="0" value="0" onChange="Calcola()">
+                            <br><br>
+                            <input type="number" name="quant3" class="quant" max="100" min="0" value="0" onChange="Calcola()">
+                            <br><br>
+                            <input type="number" name="quant4" class="quant" max="100" min="0" value="0" onChange="Calcola()">
+                            <br><br>
+                            <input type="number" name="quant5" class="quant" max="100" min="0" value="0" onChange="Calcola()">
+                            <br><br>
+                        </div>
+                    </div>
+
+                    <div class="prezzo_totale">
+                        <div class="info">
+                            Prezzo totale
+                        </div>
+                        <div class="cont2"> 
+                            <br>
+                            <input type="text" name="prezzo_tot1" class="prezzo" value="0" disabled>
+                            <br><br>
+                            <input type="text" name="prezzo_tot2" class="prezzo" value="0" disabled>
+                            <br><br>
+                            <input type="text" name="prezzo_tot3" class="prezzo" value="0" disabled>
+                            <br><br>
+                            <input type="text" name="prezzo_tot4" class="prezzo" value="0" disabled>
+                            <br><br>
+                            <input type="text" name="prezzo_tot5" class="prezzo" value="0" disabled>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="testo">
+                        Totale complessivo
+                    </div>
+                    <input type="text" name="totale" class="risultato" value="==================" disabled>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <!-- Dati cliente -->
+        <div class="dati_cliente">
+            <fieldset>
+                <legend>
+                    <strong>Dati cliente</strong>
+                </legend>
+
+                <div class="dati">
+                    <div class="container">
+                        <div class="cognome">
+                            Cognome *: <input type="text" name="cognome" class="articolo" maxlength="100">
+                        </div>
+                        <div class="nome">
+                            Nome *: <input type="text" name="nome" class="articolo" maxlength="100">
+                        </div>
+                    </div>
+    
+                    <div class="container">
+                        <div class="email">
+                            Email *: <input type="text" name="email" class="articolo" maxlength="100">
+                        </div>
+                        <div class="indirizzo">
+                            Indirizzo *: <input type="text" name="indirizzo" class="articolo" maxlength="100">
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <!-- Conferma e invio dei dati -->
+        <div class="conferma_e_invio">
+            <fieldset>
+                <legend>
+                    <strong>Conferma e invio dei dati</strong>
+                </legend>
+
+                <div class="container">
+                    <div class="bottoni">
+                        <input type="button" class="btn1" value="Invia modulo" onclick="Invia()">
+                        <input type="reset" class="btn2" name="Annulla" value="Annulla">
+                        <button class="btn3">Indietro</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+    </form>
+
+</body>
+</html>

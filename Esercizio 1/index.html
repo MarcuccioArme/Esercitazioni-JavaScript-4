@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Esercizio 1</title>
+
+    <script>
+        
+        function Verifica() {
+
+            var NomeCognome = document.Form.nome.value;
+            var Indirizzo = document.Form.indirizzo.value;
+            var CAP = document.Form.cap.value;
+            var Comune = document.Form.comune.value;
+            var Provincia = document.Form.provincia.value;
+            var Telefono = document.Form.telefono.value;
+            var Email = document.Form.email.value;
+            var Messaggio = document.Form.messaggio.value;
+
+            var Flag = true;
+            
+            //Controllo Nome e Cognome
+            if (NomeCognome == "") {
+                Flag = false;
+            }
+            
+            //Controllo Indirizzo
+            if (Indirizzo == "") {
+                Flag = false;
+            }
+            
+            //Controllo CAP
+            if (CAP == "") {
+                Flag = false;
+            } else if (CAP.length != 5) {
+                Flag = false;
+                alert("Il CAP deve essere composto da 5 caratteri.");
+            }
+            
+            //Controllo CAP
+            if (Comune == "") {
+                Flag = false;
+            }
+            
+            //Controllo Provincia
+            if (Provincia == "") {
+                Flag = false;
+            } else if (Provincia.length != 2) {
+                Flag = false;
+                alert("La Provincia deve essere 2 caratteri MAX.");
+            }
+            
+            //Controllo Numero di telefono
+            if (Telefono == "") {
+                Flag = false;
+            }
+
+            //Controllo Email
+            if (Email == "" || Email.indexOf("@") == -1) {
+                Flag = false;
+            }
+            
+            //Controllo Messaggio
+            if (Messaggio == "") {
+                Flag = false;
+            }
+
+            //Controllo finale
+            if (Flag == false) {
+                alert("Il modulo non può essere inviato: verifica di aver inserito tutti i dati correttamente.");
+            } 
+            else {
+                alert("Modulo inviato con successo.");
+            }
+
+        }
+    </script>
+
+</head>
+<body>
+    
+    <form name="Form">
+
+        <table>
+            <tr>
+                <td>Nome e Cognome:</td>
+                <td><input type="text" name="nome" size="30"></td>
+            </tr>
+            <tr>
+                <td>Indirizzo:</td>
+                <td><input type="text" name="indirizzo" size="30"></td>
+            </tr>
+            <tr>
+                <td>CAP:</td>
+                <td><input type="text" name="cap" size="30" maxlength="5"></td>
+            </tr>
+            <tr>
+                <td>Comune:</td>
+                <td><input type="text" name="comune" size="30"></td>
+            </tr>
+            <tr>
+                <td>Provincia:</td>
+                <td><input type="text" name="provincia" size="30" maxlength="2"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email" size="30"></td>
+            </tr>
+            <tr>
+                <td>Telefono:</td>
+                <td><input type="text" name="telefono" size="30" placeholder="Formato da seguire: (080)-1234567" maxlength="10"></td>
+            </tr>
+            <tr>
+                <td>Messaggio:</td>
+                <td><textarea name="messaggio" cols="35" rows="10" placeholder="Inserisci qui il messaggio..." required></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="bottoni">
+                        <input type="reset" name="Reimposta">
+                        <input type="button" value="Invia" onclick="Verifica()">
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+</body>
+</html>

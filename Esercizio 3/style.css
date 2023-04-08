@@ -1,0 +1,92 @@
+*{
+    margin: 1;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+strong {
+    color: darkred;
+}
+
+input[type="text"], input[type="datetime"], input[type="password"]{
+    background-color: rgb(255, 255, 153);
+    margin: 5px;
+}
+
+select {
+    margin: 5px;
+    background-color: rgb(255, 255, 153);
+}
+
+input[type="radio"] {
+    margin: 5px;
+    color: red;
+}
+
+table {
+    color: blue;
+    font-size: 18px;
+    margin: 10px;
+}
+
+.dati {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dati_anagrafici, .dati_registrazione {
+    width: 50%;
+    height: auto;
+}
+.dati_anagrafici {
+    margin-right: 15px;
+}
+
+.avviso {
+    margin-top: 50px;
+    color: blue;
+    text-align: center;
+}
+
+.conferma_e_invio {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 15px;
+    clear: both;
+}
+
+/* Bottoni */
+.bottoni {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.btn1 {
+    background-color: rgb(127, 255, 165);
+    color: blue;
+    width: 100px;
+    height: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn2 {
+    background-color: red;
+    color: yellow;
+    width: 100px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn3 {
+    background-color: yellow;
+    color: red;
+    width: 100px;
+    cursor: pointer;
+    font-weight: bold;
+}
